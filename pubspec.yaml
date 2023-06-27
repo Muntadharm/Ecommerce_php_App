@@ -57,6 +57,8 @@ dependencies:
   url_launcher: ^6.1.11
   dropdown_search: ^5.0.6
   badges: ^3.1.1
+  
+  flutter_otp_text_field: ^1.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -6,13 +6,13 @@ class CustomTextFormAuth extends StatelessWidget {
   final String labletext;
   final String hinttext;
   final IconData iconData;
-  final TextEditingController? mycontroller;
+  final TextEditingController mycontroller;
   const CustomTextFormAuth(
       {super.key,
       required this.labletext,
       required this.hinttext,
       required this.iconData,
-      this.mycontroller});
+      required this.mycontroller});
 
   @override
   Widget build(BuildContext context) {

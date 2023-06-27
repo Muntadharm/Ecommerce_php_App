@@ -1,20 +1,21 @@
+import 'package:ecommers_php_app/controller/auth/login_controller.dart';
 import 'package:ecommers_php_app/core/constant/color.dart';
 import 'package:ecommers_php_app/view/widget/auth/CustomButtonAuth.dart';
 import 'package:ecommers_php_app/view/widget/auth/CustomTextBodyAuth.dart';
 import 'package:ecommers_php_app/view/widget/auth/CustomTextformAuth.dart';
 import 'package:ecommers_php_app/view/widget/auth/CusttemTitleAuth.dart';
-import 'package:ecommers_php_app/view/widget/auth/TextSignUp.dart';
+import 'package:ecommers_php_app/view/widget/auth/CustemTextSignUpOrSignIn.dart';
 import 'package:ecommers_php_app/view/widget/auth/logo.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
+    LoginControllerImp controller = Get.put(LoginControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.white,
@@ -44,22 +45,29 @@ class Login extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const CustomTextFormAuth(
+                CustomTextFormAuth(
                   labletext: 'Email',
                   hinttext: 'Enter your E-mail',
                   iconData: Icons.email_outlined,
+                  mycontroller: controller.email,
                 ),
                 // const SizedBox(
                 //   height: 30,
                 // ),
-                const CustomTextFormAuth(
+                CustomTextFormAuth(
                   labletext: 'password',
                   hinttext: 'Enter your password',
                   iconData: Icons.lock_clock_outlined,
+                  mycontroller: controller.password,
                 ),
-                const Text(
-                  'Forgate password ?',
-                  textAlign: TextAlign.end,
+                InkWell(
+                  onTap: () {
+                    controller.goToForgetPassowd();
+                  },
+                  child: const Text(
+                    'Forgate password ?',
+                    textAlign: TextAlign.end,
+                  ),
                 ),
 
                 CustomButtonAuth(
@@ -70,10 +78,12 @@ class Login extends StatelessWidget {
                   height: 30,
                 ),
 
-                const CustemTextSignUpOrSignIn(
-                  textone: "Don't have an accont ?",
-                  texttwo: " Sign Up",
-                ),
+                CustemTextSignUpOrSignIn(
+                    textone: "Don't have an accont ?",
+                    texttwo: " Sign Up",
+                    onTap: () {
+                      controller.goToSignup();
+                    }),
               ],
             )));
   }

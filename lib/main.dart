@@ -3,6 +3,7 @@ import 'package:ecommers_php_app/core/localization/changeelocal.dart';
 import 'package:ecommers_php_app/core/localization/translation.dart';
 import 'package:ecommers_php_app/core/services/services.dart';
 import 'package:ecommers_php_app/routes.dart';
+import 'package:ecommers_php_app/test.dart';
 import 'package:ecommers_php_app/view/screen/auth/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
                   color: AppColor.Grey))),
       home: const Language(),
       routes: routes,
+      //Test(),
     );
   }
 }

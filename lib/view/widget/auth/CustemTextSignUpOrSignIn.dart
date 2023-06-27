@@ -7,9 +7,13 @@ import 'package:get/get.dart';
 
 class CustemTextSignUpOrSignIn extends StatelessWidget {
   const CustemTextSignUpOrSignIn(
-      {super.key, required this.textone, required this.texttwo});
+      {super.key,
+      required this.textone,
+      required this.texttwo,
+      required this.onTap});
   final String textone;
   final String texttwo;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +22,7 @@ class CustemTextSignUpOrSignIn extends StatelessWidget {
       children: [
         Text(textone),
         InkWell(
-          onTap: () {
-            Get.toNamed(AppRoute.signup);
-          },
+          onTap: onTap,
           child: Text(
             texttwo,
             style: const TextStyle(
