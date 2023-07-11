@@ -1,20 +1,20 @@
 import 'package:ecommers_php_app/core/constant/routes.dart';
 import 'package:get/get.dart';
 
-abstract class VerfiyCodeController extends GetxController {
+abstract class VerfiyCodeSignUPController extends GetxController {
   checkCode();
-  goToRessetPassowrd();
+  goToSuccessSignUp();
 }
 
-class VerfiyCodeControllerImp extends VerfiyCodeController {
+class VerfiyCodeSignUPControllerImp extends VerfiyCodeSignUPController {
   //late TextEditingController code;
   late String verifycode;
   @override
   checkCode() {}
 
   @override
-  goToRessetPassowrd() {
-    Get.offNamed(AppRoute.resetPassowrd);
+  goToSuccessSignUp() {
+    Get.offNamed(AppRoute.successSignUp);
   }
 
   @override

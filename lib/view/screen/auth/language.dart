@@ -1,13 +1,10 @@
-import 'package:ecommers_php_app/core/constant/color.dart';
 import 'package:ecommers_php_app/core/constant/routes.dart';
-import 'package:ecommers_php_app/core/localization/changeelocal.dart';
+import 'package:ecommers_php_app/core/localization/changelocal.dart';
 import 'package:ecommers_php_app/view/widget/language/custemButtomlanguage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
-class Language extends GetView<localController> {
+class Language extends GetView<LocalController> {
   const Language({super.key});
 
   @override
@@ -26,7 +23,7 @@ class Language extends GetView<localController> {
               height: 15,
             ),
             CustemButtenLanguage(
-              textbutten: 'Arabic',
+              textbutten: 'العربية',
               onprassed: () {
                 controller.changelang('ar');
                 Get.toNamed(AppRoute.OnBording);

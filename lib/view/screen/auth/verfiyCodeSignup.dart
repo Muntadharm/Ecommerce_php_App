@@ -1,3 +1,4 @@
+import 'package:ecommers_php_app/controller/auth/verfiycodeSignUp_controller.dart';
 import 'package:ecommers_php_app/controller/auth/verfiycode_controller.dart';
 import 'package:ecommers_php_app/core/constant/color.dart';
 import 'package:ecommers_php_app/view/widget/auth/CustomTextBodyAuth.dart';
@@ -8,10 +9,10 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 import 'package:get/get.dart';
 
-class VerfiyCode extends StatelessWidget {
-  VerfiyCode({super.key});
-
-  VerfiyCodeControllerImp controller = Get.put(VerfiyCodeControllerImp());
+class VerfiyCodeSignUp extends StatelessWidget {
+  VerfiyCodeSignUp({super.key});
+  VerfiyCodeSignUPControllerImp controller =
+      Get.put(VerfiyCodeSignUPControllerImp());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +55,7 @@ class VerfiyCode extends StatelessWidget {
                   },
                   //runs when every textfield is filled
                   onSubmit: (String verificationCode) {
-                    controller.goToRessetPassowrd();
+                    controller.goToSuccessSignUp();
                   }, // end onSubmit
                 ),
                 // CustomButtonAuth(

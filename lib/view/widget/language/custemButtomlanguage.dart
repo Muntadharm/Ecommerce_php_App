@@ -14,7 +14,7 @@ class CustemButtenLanguage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 100),
       width: double.infinity,
-      color: AppColor.blueAccent,
+      color: AppColor.primerycolor,
       child: MaterialButton(
         //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         onPressed: onprassed,

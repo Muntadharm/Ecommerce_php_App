@@ -4,18 +4,26 @@ import 'package:flutter/material.dart';
 
 abstract class ForgetPassowrdController extends GetxController {
   checkEmail();
-  goToVerfiyCode();
+  //goToVerfiyCode();
 }
 
 class ForgetPassowrdControllerImp extends ForgetPassowrdController {
   late TextEditingController email;
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   @override
-  checkEmail() {}
+  checkEmail() {
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      Get.offNamed(AppRoute.verfiyCode);
+    } else {
+      print('not valid');
+    }
+  }
 
   @override
-  goToVerfiyCode() {
-    Get.offNamed(AppRoute.verfiyCode);
-  }
+  // goToVerfiyCode() {
+  //   Get.offNamed(AppRoute.verfiyCode);
+  //}
 
   @override
   void onInit() {

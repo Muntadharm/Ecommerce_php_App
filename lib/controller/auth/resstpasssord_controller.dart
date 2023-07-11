@@ -1,28 +1,39 @@
-import 'dart:math';
-
 import 'package:ecommers_php_app/core/constant/routes.dart';
 import 'package:get/get.dart';
 
-import 'package:ecommers_php_app/core/constant/routes.dart';
-import 'package:ecommers_php_app/view/screen/auth/login.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 abstract class RessetPassowrdController extends GetxController {
   ressetpassowrd();
-  goToSuccessResetpassowrd();
+  // goToSuccessResetpassowrd();
 }
 
 class RessetPassowrdControllerImp extends RessetPassowrdController {
   late TextEditingController password;
   late TextEditingController rePassword;
-  @override
-  ressetpassowrd() {}
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
+  bool isshowpassowrd = true;
+  showPassowrd() {
+    isshowpassowrd = isshowpassowrd == true ? false : true;
+    update();
+  }
 
   @override
-  goToSuccessResetpassowrd() {
-    Get.offNamed(AppRoute.successRessetPasssowrd);
+  ressetpassowrd() {
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      Get.offNamed(AppRoute.successRessetPasssowrd);
+      //Get.delete<RessetPassowrdControllerImp>();
+    } else {
+      print('valid input ');
+    }
   }
+
+  // @override
+  // goToSuccessResetpassowrd() {
+  //   Get.offNamed(AppRoute.successRessetPasssowrd);
+  // }
 
   @override
   void onInit() {

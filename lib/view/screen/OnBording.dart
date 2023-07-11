@@ -28,7 +28,7 @@ class onBording extends StatelessWidget {
                       flex: 2,
                     ),
                     CustomButtonOnBording(
-                      text: 'Continue',
+                      text: '10'.tr,
                       color: AppColor.primerycolor,
                       textcolor: AppColor.white,
                     ),

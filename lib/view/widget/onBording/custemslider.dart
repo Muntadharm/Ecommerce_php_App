@@ -22,15 +22,20 @@ class CustemSliderOnBording extends GetView<OnBordingControllerImp> {
       itemCount: onBordingList.length,
       itemBuilder: (context, i) => Column(
         children: [
-          Text(onBordingList[i].title!,
-              style: Theme.of(context).textTheme.displayLarge),
+          Text(
+            onBordingList[i].title!,
+            style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: AppColor.black),
+          ),
           const SizedBox(
             height: 50,
           ),
           Image.asset(
             onBordingList[i].image!,
-            width: 320,
-            height: 340,
+            //width: 320,
+            height: Get.width / 1.3,
             fit: BoxFit.fill,
           ),
           const SizedBox(
@@ -41,7 +46,11 @@ class CustemSliderOnBording extends GetView<OnBordingControllerImp> {
             alignment: Alignment.center,
             child: Text(onBordingList[i].body!,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    height: 2,
+                    fontSize: 20,
+                    color: AppColor.Grey)),
           ),
         ],
       ),

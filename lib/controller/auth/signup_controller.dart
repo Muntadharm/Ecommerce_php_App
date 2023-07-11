@@ -1,10 +1,7 @@
 import 'package:ecommers_php_app/core/constant/routes.dart';
 import 'package:get/get.dart';
 
-import 'package:ecommers_php_app/core/constant/routes.dart';
-import 'package:ecommers_php_app/view/screen/auth/login.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
   signUp();
@@ -17,9 +14,23 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController password;
   late TextEditingController username;
   late TextEditingController phone;
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   @override
+  bool isshowpassowrd = true;
+  showPassowrd() {
+    isshowpassowrd = isshowpassowrd == true ? false : true;
+    update();
+  }
+
   signUp() {
-    Get.offNamed(AppRoute.checkemail);
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      Get.offNamed(AppRoute.verfiyCodeSignUp);
+      // Get.delete<SignUpControllerImp>(); //to delet data from memory
+      // or use lazyput
+    } else {
+      print('not valid');
+    }
   }
 
   @override
